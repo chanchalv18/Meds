@@ -1,0 +1,48 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    }
+  },
+  "dependent_plugins": {}
+}

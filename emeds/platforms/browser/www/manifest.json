@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Emeds",
+  "short_name": "Emeds",
+  "version": "com.whitehats.emeds",
+  "description": "A prescription digitization system and misc other benefits.",
+  "author": "Team White Hats",
+  "icons": [],
+  "start_url": "index.html"
+}

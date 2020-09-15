@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+#headerHome{
+    background-color: #1565c0;
+}
+body {
+    color: #ffffff;
+    font-family: Helvetica, Sans-Serif;
+}
+#footerhome{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    /* text-align: center; */
+    /*color:rgb(0, 77, 153);*/
+        /*font-family: Georgia, serif;*/
+    background-color: white;
+    z-index: 10;
+}
+#headerDisplay{
+    background-color: #5e92f3;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+}
+#footerDisplay{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color:#4ee5dd;
+    background-color: white;
+    z-index: 10;
+}
+#clearButton{
+    /*move it to top right somehow please :)*/
+    position: center;
+
+}
+#isSelect {
+    float: right;
+}
+
+.login {
+    width: max-content !important;
+    height: max-content !important;
+    background: linear-gradient(to bottom, rgb(0, 77, 153), rgb(0, 77, 153) 100%) !important; /* W3C */
+    border: none !important;
+    border-radius: 5px !important;
+    position: relative !important;
+    border-bottom: 4px solid rgb(0, 77, 153)!important;
+    color: #fbfbfb !important;
+    font-weight: 600 !important;
+    font-family: Georgia, serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4) !important;
+    font-size: 15px !important;
+    text-align: left !important;
+    text-indent: 5px !important;
+    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2) !important;
+    cursor: pointer !important;
+
+    /* Just for presentation */
+    display: block !important;
+    margin: 0 auto !important;
+    margin-bottom: 20px !important;
+
+}
+
+#background {
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    left: 0px; 
+    top: 0px;
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
+#ScreenPage,#home{
+
+background-color:rgb(230, 242, 255);
+
+}
+
+
+
+.text{
+
+    font-family: Georgia, serif;
+    color:white;
+
+}
+th.text{
+
+    font-family: Georgia, serif;
+    color:#1565c0;
+
+}
+
+/******************** CARD CSS *******************/
+.card{box-shadow: 0 4px 8px 0 rgb(230, 242, 255);
+    transition: 0.3s;
+    width: 75%;
+    border-radius: 1px;
+    text-transform:uppercase;
+    font-family: Helvetica, Sans-Serif;
+    align-content: center;
+    color:whitesmoke;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px;
+
+
+}
+.card:hover {box-shadow: 0 4px 10px 0 rgba(46, 153, 253, 0.342);
+    background-color:rgb(230, 242, 255);}
+.card-block {padding:10px; text-align: center;
+    background-color:	#1565c0;
+    border-radius: 10%;
+}
+.card-img {
+    border-radius: 0px 0px;
+    max-height:100%;
+    /* overflow: hidden; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+    background: none !important;
+
+}
+/****************  BORDER ***********/
+.out-border {border:1px solid #A0D468;border-radius:10px 10px;}
+#home {
+    padding-top: 17.5%;
+    
+}

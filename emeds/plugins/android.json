@@ -1,0 +1,52 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    },
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+      "GOOGLE_API_KEY_FOR_ANDROID": "AIzaSyAJYQWyAms17wXCA0cFAUooyXW26ECoz5I",
+      "OKHTTP_VERSION": "3.12.0",
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-actionsheet": {
+      "PACKAGE_NAME": "com.whitehats.emeds"
+    }
+  }
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>eMeds</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy"
+          content="img-src 'self' data:;
+                default-src *;
+                  style-src * 'self' 'unsafe-inline' 'unsafe-eval';
+                  script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+                
+
+ 
+  <link rel="stylesheet" href="css/material.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <!-- Image card -->
+    <style>
+    .demo-card-image.mdl-card {
+      width: 256px;
+      height: 256px;
+      background: url('img/qr.png') center / cover;
+    }
+    .demo-card-image > .mdl-card__actions {
+      height: 52px;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .demo-card-image__filename {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    </style>
+
+    <!--bootsnip links-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.11.1.min.js" ></script>
+    <script type="text/javascript" src="js/index.js" async="async"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js" ></script>
+</head>
+
+<body>
+ <div  id="ScreenPage" data-role="page">
+            <div data-role="header" id="headerHome">
+                <h1 class="text"><strong>eMeds</strong></h1>
+            </div>
+
+            
+            <div data-role="main" class="ui-content" >
+
+                        <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card" onclick="scanNow()">
+                                            <div class="card-img col-xs-12">
+                                                <img class="img-responsive img-circle" src="img/qr.png">
+                                            </div>
+                                            <div class="card-block">
+
+                                                <div class="card-title"><strong>Scan</strong> | स्कैन</div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card" onclick="location.href='index.html#display'">
+                                            <div class="card-img col-xs-12">
+                                                <img class="img-responsive img-circle" src="img/file.jpeg">
+                                            </div>
+                                            <div class="card-block">
+                                            <div class="card-title"><strong>My Prescriptions</strong><br> मेरा प्रिस्क्रिप्शन
+                                             
+                                              
+                                            </div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card" onclick="cordova.InAppBrowser.open('http://sih.pbehre.in/login.php', '_blank', 'location=yes');">
+                                                <div class="card-img col-xs-12">
+                                                    <img class="img-responsive img-circle" src="img/user.png">
+                                                </div>
+                                                <div class="card-block">
+                                                <div class="card-title"><strong>User Login</strong><br>उपयोगकर्ता लॉगिन
+                                                 
+                                                  
+                                                </div>
+                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+            </div>
+      <br>
+      <br>
+
+            <div data-role="footer" id="footerhome">
+                <div class="row">
+                    <div class="col-xs-4" onclick="location.href='index.html#EnglishHelp'"><button>FAQ</button></div>
+                    <div class="col-xs-4">MyGov</div>
+                    <div class="col-xs-4" onclick="location.href='index.html#HindiHelp'"><button>सामान्य प्रश्न</button></div>
+                </div>
+            </div>
+        </div>
+    
+        <div data-role="page" id="display">
+            <div data-role="header" id="headerDisplay">
+                <div class="row">
+                        <div class="col-xs-5"><button class="btn btn-xs btn-info" onclick="ClearLocalStorage()" id="clearButton">Clear History | साफ़</button></div>
+                        <div class="col-xs-4"><input type='button' class="btn btn-xs btn-success" value='Get Details | विवरण प्राप्त करें' id='isSelect'></div>
+                        <div class="col-xs-2"></div>
+                </div>
+            </div>
+
+            <div id="home" data-role="main" class="ui-content">
+
+                <table data-role="table" data-mode="column" id="allTable" class="ui-responsive table-stroke">
+                    <thead>
+                    <tr>
+                        <th class="text">My Prescriptions | मेरा प्रिस्क्रिप्शन :</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+            <div data-role="footer" id="footerDisplay">
+                <button class="btn btn-sm btn-info" onclick="location.href='index.html#ScreenPage'">Back | वापस</button>
+            </div>
+        </div>
+
+
+         <div data-role="page" id="displayNew">
+             <div data-role="header" id="headerDisplay">
+                 <div class="row">
+                     <!--<div class="col-xs-5 col-xs-offset-1"><button class="btn btn-xs btn-info" onclick="ClearLocalStorage()" id="clearButton">Clear History</button></div>-->
+                     <!--<div class="col-xs-5"><input type='button' class="btn btn-xs btn-success" value='Find this Store' id='isSelect'></div>-->
+                     <!--<div class="col-xs-1"></div>-->
+                     <div class="col-xs-4 col-xs-offset-3"><input type='button' class="btn btn-xs btn-success" value='Find this Store | स्टोर खोजें' id='isSelectNew'></div>
+                 </div>
+             </div>
+
+             <div id="homeNew" data-role="main" class="ui-content">
+
+                 <table data-role="table" data-mode="column" id="allTableNew" class="ui-responsive table-stroke">
+                     <thead>
+                     <tr>
+                         <th class="text">My Prescriptions | पर्चे:</th>
+                     </tr>
+                     </thead>
+                     <tbody id="tableBodyNew">
+                     </tbody>
+                 </table>
+             </div>
+             <div data-role="footer" id="footerDisplay">
+                 <button class="btn btn-sm btn-info" onclick="location.href='index.html#ScreenPage'">Back | वापस</button>
+             </div>
+         </div>
+
+        <div data-role="page" id="experimentalPage">
+            <div data-role="header">
+                <h1>experimentalPage</h1>
+                <button onclick="location.href='index.html#home'">Return home</button>
+                <button onclick="location.href='index.html#display'">Display Page</button>
+            </div>
+
+            <div data-role="content">
+
+                <ul data-role="listview" data-inset="true"
+                    data-filter="true" data-filter-placeholder="Search Prescription"
+                data-divider-theme="b" id="customListviewPrescription">
+                    <li data-role="list-divider" id="dateDisplay">hgvhg</li>
+                    <li id="contentDisplay"><a href="#" ></a></li>
+                </ul>
+
+
+                <table data-role="table" data-mode="column" id="allTable1" class="ui-responsive table-stroke">
+                    <thead>
+                    <tr>
+                        <th>Prescription:</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableBody1">
+                    </tbody>
+                </table>
+                <button onclick="sendAjaxGvs('http://sih.pbehre.in/api/v1/qrcode/a428d398983b1f8023c333da57f4e957','GET',null)">AJAx</button>
+            </div>
+            <div data-role="footer">
+                <p></p>
+            </div>
+        </div>
+        
+
+
+
+
+        <div data-role="page" id="EnglishHelp">
+            <div data-role="header">
+                <h1>Help</h1>
+                <button onclick="location.href='index.html#ScreenPage'">Return home</button>
+                <!-- <button onclick="location.href='index.html#display'">Display Page</button> -->
+            </div>
+
+            <div data-role="content">
+                <table>
+                    <thead>
+                    <tr>
+                        <th class="text">SCAN</th>
+                    </tr>
+                    </thead>
+
+                    <tr>
+                        <td><img src="img/qrHelp.png"></td>
+                        <td>click on "SCAN" to scan the QR code present on your prescription.</td>
+                    </tr>
+                </table>
+            </br>
+                <table>
+                    <thead>
+                        <th class="text"> MY PRESCRIPTION</th>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td><img src="img/fileHelp.jpeg"></td>
+                        <td>Click on "MY PRESCRIPTION" to view your existing prescription.</td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+                </br>
+                <table>
+                    <thead>
+                    <tr>
+                        <th class="text">USER LOGIN</th>
+                    </tr>
+                    </thead>
+
+                    <tr>
+                        <td><img src="img/userHelp.png"></td>
+                        <td>Doctors, Patients, Hospitals and Stores can click on "USER LOGIN" to get access to their respective user accounts .</td>
+                    </tr>
+                </table>
+
+            </div>
+            
+        </div>
+
+ <div data-role="page" id="HindiHelp">
+     <div data-role="header">
+         <h1>Help</h1>
+         <button onclick="location.href='index.html#ScreenPage'">Return home</button>
+         <!-- <button onclick="location.href='index.html#display'">Display Page</button> -->
+     </div>
+
+     <div data-role="content">
+         <table>
+             <thead>
+             <tr>
+                 <th class="text">SCAN</th>
+             </tr>
+             </thead>
+
+             <tr>
+                 <td><img src="img/qrHelp.png"></td>
+                 <td></td>
+                 <td>
+                     आपके डॉक्टर के पर्चे पर मौजूद क्यूआर कोड को स्कैन करने के लिए "Scan" पर क्लिक करें।</td>
+             </tr>
+         </table>
+         </br>
+         <table>
+             <thead>
+             <th class="text"> MY PRESCRIPTION</th>
+             </thead>
+
+             <tbody>
+             <tr>
+                 <td><img src="img/fileHelp.jpeg"></td>
+                 <td></td>
+                 <td>अपने मौजूदा नुस्खे को देखने के लिए "My Prescription" पर क्लिक करें</td>
+             </tr>
+
+             </tbody>
+
+         </table>
+         </br>
+         <table>
+             <thead>
+             <tr>
+                 <th class="text">USER LOGIN</th>
+             </tr>
+             </thead>
+
+             <tr>
+                 <td><img src="img/userHelp.png"></td>
+                 <td></td>
+                 <td>
+                     डॉक्टर, मरीजों, अस्पताल और स्टोर "User Login" पर क्लिक कर सकते हैं ताकि वे अपने संबंधित उपयोगकर्ता खातों तक पहुंच सकें।</td>
+             </tr>
+         </table>
+
+     </div>
+     <div data-role="footer">
+     </div>
+ </div>
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<script src="js/material.min.js"></script>
+<link rel="stylesheet" href="css/googlefonts.css">
+</body>
+
+</html>
